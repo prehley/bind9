@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# This runs the container in the foreground.  Typing Ctrl-C to stop the
+# container will also remove the container.
+
+pushd $(dirname $0) > /dev/null
+
+# Container is the container id or name.
+container=$1
+
+# Action is what to do.
+# Using action as 'named' will run the named service
+# Using action as '/bin/bash' will start the bash shell inside the container.
+action=$2
+
+etcbind="/home/bind/etcbind"
+varbind="/home/bind/varbind"
+
+docker run -it --rm --name bind9 --net=host -v "$etcbind":/etc/bind -v "$varbind":/var/lib/bind "$container" "$action"
+
+popd > /dev/null
