@@ -1,5 +1,4 @@
-FROM ubuntu:bionic
-
+FROM resin/rpi-raspbian
 MAINTAINER Peter Rehley <peter_rehley@yahoo.com>
 
 RUN apt-get update && \

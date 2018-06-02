@@ -16,6 +16,6 @@ action=$2
 etcbind="/home/bind/etcbind"
 varbind="/home/bind/varbind"
 
-docker run -it --rm --name bind9 --net=host -v "$etcbind":/etc/bind -v "$varbind":/var/lib/bind "$container" "$action"
+docker run -it --rm --name rpi-bind9 --net=host -v "$etcbind":/etc/bind -v "$varbind":/var/lib/bind "$container" "$action"
 
 popd > /dev/null
