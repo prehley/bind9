@@ -1,16 +1,16 @@
-# bind9
-Docker image for bind server
+# rpi-bind9
+Docker image for bind server on rasberry pi
 ================================
 
-This Docker image is suitable for running a DNS server for your docker host
-network.  It uses the bind9 server which is bundled with the latest Ubuntu
-LTS distribution.
+This Docker image is suitable for running a DNS server for your docker raspberry
+pi host network.  It uses the bind9 server which is bundled with the latest raspbian
+distribution.
 
 How to build
 ============
 
  1. Install Docker with the instructions on <https://www.docker.com>.
- 2. Run `./build` to create the local docker image `prehley/bind9`.
+ 2. Run `./build` to create the local docker image `prehley/rpi-bind9`.
 
 How to use
 ==========
@@ -32,7 +32,7 @@ A simple `run` script is also included which makes it quick to iterate on a
 configuration until you're satisfied.
 
 It's also possible to launch a bash shell to ease testing.  Use the following command
- `docker run -it --rm --name bind9 --net=host -v "$(pwd)/etcbind":/etc/bind -v "$(pwd)/varbind":/var/lib/bind prehley/bind9 /bin/bash`
+ `docker run -it --rm --name rpi-bind9 --net=host -v "$(pwd)/etcbind":/etc/bind -v "$(pwd)/varbind":/var/lib/bind prehley/rpi-bind9 /bin/bash`
 
 Notes
 =====
@@ -53,13 +53,13 @@ Acknowledgements
 
 This image uses the following software components:
 
- * Ubuntu Linux distribution from <https://www.ubuntu.com>.
- * bind9 from <https://www.isc.org/downloads/bind> via ubuntu.
+ * raspbian Linux distribution from resin.
+ * bind9 from <https://www.isc.org/downloads/bind> via raspbian.
 
 Copyright & License
 ===================
 
-The prehley/bind9 project is copyright 2018 Peter Rehley <peter_rehley@yahoo.com>
+The prehley/rpi-bind9 project is copyright 2018 Peter Rehley <peter_rehley@yahoo.com>
 
 It is licensed under the MIT License
 
